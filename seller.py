@@ -182,8 +182,7 @@ def create_prices(watch_remnants, offer_ids):
         Returns:
             List of prices for goods.
 
-        """
-
+    """
     prices = []
     for watch in watch_remnants:
         if str(watch.get("Код")) in offer_ids:
@@ -221,7 +220,7 @@ def divide(lst: list, n: int):
 
 
 async def upload_prices(watch_remnants, client_id, seller_token):
-    """Splits a list into 1000 elements.
+    """Splits the price list into 1000 elements.
 
         Args:
             watch_remnants (list): list product.
@@ -229,9 +228,9 @@ async def upload_prices(watch_remnants, client_id, seller_token):
             seller_token (str): seller token.
 
         Returns:
-            Split list in json format.
+            json: data.
 
-        """
+    """
     offer_ids = get_offer_ids(client_id, seller_token)
     prices = create_prices(watch_remnants, offer_ids)
     for some_price in list(divide(prices, 1000)):
