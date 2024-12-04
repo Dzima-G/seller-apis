@@ -14,12 +14,12 @@ def get_product_list(page, campaign_id, access_token):
     """Get a list of products from the Yandex Market store.
 
         Args:
-            page (str): none.
-            campaign_id (str): FBS_ID.
-            access_token (str): MARKET_TOKEN.
+            page (str): undefined.
+            campaign_id (str): campaign id.
+            access_token (str): access token.
 
         Returns:
-            list: data.
+            list: products.
 
     """
     endpoint_url = "https://api.partner.market.yandex.ru/"
@@ -44,12 +44,12 @@ def update_stocks(stocks, campaign_id, access_token):
     """Get a list of products from the Yandex Market store.
 
         Args:
-            stocks (str): none.
-            campaign_id (str): FBS_ID.
-            access_token (str): MARKET_TOKEN.
+            stocks (list): stocks.
+            campaign_id (str): campaign id.
+            access_token (str): access token.
 
         Returns:
-            list: data.
+            list: updated stocks.
 
     """
     endpoint_url = "https://api.partner.market.yandex.ru/"
@@ -71,12 +71,12 @@ def update_price(prices, campaign_id, access_token):
     """Get a list of products from the Yandex Market store.
 
         Args:
-            prices (list): data.
-            campaign_id (str): FBS_ID.
-            access_token (str): MARKET_TOKEN.
+            prices (list): prices.
+            campaign_id (str): campaign id.
+            access_token (str): access token.
 
         Returns:
-            list: data.
+            list: prices.
 
     """
     endpoint_url = "https://api.partner.market.yandex.ru/"
@@ -98,11 +98,11 @@ def get_offer_ids(campaign_id, market_token):
     """Get Yandex Market product codes.
 
         Args:
-            campaign_id (str): FBS_ID.
-            market_token (str): MARKET_TOKEN.
+            campaign_id (str): campaign id.
+            access_token (str): access token.
 
         Returns:
-           list: data.
+           list: offer ids.
 
     """
     page = ""
@@ -123,12 +123,12 @@ def create_stocks(watch_remnants, offer_ids, warehouse_id):
     """Generates an up-to-date list of products.
 
         Args:
-            watch_remnants (list): data.
-            offer_ids (list): data.
-            warehouse_id (str): WAREHOUSE_FBS_ID.
+            watch_remnants (list): watch remnants.
+            offer_ids (list): offer ids.
+            warehouse_id (str): warehouse id.
 
         Returns:
-           list: data.
+           list: stocks.
 
     """
     # Уберем то, что не загружено в market
@@ -179,11 +179,11 @@ def create_prices(watch_remnants, offer_ids):
     """Generates a list of prices.
 
         Args:
-            watch_remnants (list): data.
-            offer_ids (list): data.
+            watch_remnants (list): watch remnants.
+            offer_ids (list): offer ids.
 
         Returns:
-           list: data.
+           list: prices.
 
     """
     prices = []
@@ -210,11 +210,11 @@ async def upload_prices(watch_remnants, campaign_id, market_token):
 
         Args:
             watch_remnants (list): list product.
-            campaign_id (str): FBS_ID.
-            market_token (str): MARKET_TOKEN.
+            campaign_id (str): campaign id.
+            access_token (str): access token.
 
         Returns:
-            Split list.
+            list: prices.
 
     """
     offer_ids = get_offer_ids(campaign_id, market_token)

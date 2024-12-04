@@ -15,12 +15,12 @@ def get_product_list(last_id, client_id, seller_token):
     """Get a list of products from the Ozon store.
 
     Args:
-        last_id (str): last id.
+        last_id (str): undefined.
         client_id (str): client id.
         seller_token (str): seller token.
 
     Returns:
-        list: list of products.
+        list: products.
 
     """
     url = "https://api-seller.ozon.ru/v2/product/list"
@@ -79,7 +79,7 @@ def update_price(prices: list, client_id, seller_token):
         seller_token (str): seller token.
 
     Returns:
-        list: data.
+        list: prices.
 
     """
     url = "https://api-seller.ozon.ru/v1/product/import/prices"
@@ -102,7 +102,7 @@ def update_stocks(stocks: list, client_id, seller_token):
         seller_token (str): seller token.
 
     Returns:
-        list: data.
+        list: stocks.
 
     """
     url = "https://api-seller.ozon.ru/v1/product/import/stocks"
@@ -150,7 +150,7 @@ def create_stocks(watch_remnants, offer_ids):
         offer_ids (list): product codes.
 
     Returns:
-        List of products available in stock.
+        list: products in stock.
 
     """
     # Уберем то, что не загружено в seller
@@ -180,7 +180,7 @@ def create_prices(watch_remnants, offer_ids):
             offer_ids (list): product codes.
 
         Returns:
-            List of prices for goods.
+            list: prices for goods.
 
     """
     prices = []
@@ -228,7 +228,7 @@ async def upload_prices(watch_remnants, client_id, seller_token):
             seller_token (str): seller token.
 
         Returns:
-            list: data.
+            list: prices.
 
     """
     offer_ids = get_offer_ids(client_id, seller_token)
