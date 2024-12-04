@@ -19,7 +19,7 @@ def get_product_list(page, campaign_id, access_token):
             access_token (str): MARKET_TOKEN.
 
         Returns:
-            json: data.
+            list: data.
 
     """
     endpoint_url = "https://api.partner.market.yandex.ru/"
@@ -76,7 +76,7 @@ def update_price(prices, campaign_id, access_token):
             access_token (str): MARKET_TOKEN.
 
         Returns:
-            json: data.
+            list: data.
 
     """
     endpoint_url = "https://api.partner.market.yandex.ru/"
@@ -214,7 +214,7 @@ async def upload_prices(watch_remnants, campaign_id, market_token):
             market_token (str): MARKET_TOKEN.
 
         Returns:
-            Split list in json format.
+            Split list.
 
     """
     offer_ids = get_offer_ids(campaign_id, market_token)

@@ -79,7 +79,7 @@ def update_price(prices: list, client_id, seller_token):
         seller_token (str): seller token.
 
     Returns:
-        json: data.
+        list: data.
 
     """
     url = "https://api-seller.ozon.ru/v1/product/import/prices"
@@ -102,7 +102,7 @@ def update_stocks(stocks: list, client_id, seller_token):
         seller_token (str): seller token.
 
     Returns:
-        json: data.
+        list: data.
 
     """
     url = "https://api-seller.ozon.ru/v1/product/import/stocks"
@@ -228,7 +228,7 @@ async def upload_prices(watch_remnants, client_id, seller_token):
             seller_token (str): seller token.
 
         Returns:
-            json: data.
+            list: data.
 
     """
     offer_ids = get_offer_ids(client_id, seller_token)
